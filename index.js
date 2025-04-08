@@ -407,12 +407,13 @@
 // }
 
 // // 7.  Write a program to enable “search by user input” in an array.
-// // After searching, prompt the user whether the given item is found in the list or not. 
+// After searching, prompt the user whether the given item is found in the list or not. 
 //  var bakeryItems = ["cake", "apple pie", "cookie", "chips", "patties"]
 //  var userSearch = prompt("Welcome to ABC bakery what do you want sir/ma'm ?") 
 //  for (var i = 0; i<bakeryItems.length; i++){
 //     if (userSearch == bakeryItems[i]){
 //         document.write(userSearch + " is available at index " + i + " in our bakery")
+    
 //     } 
 //     }
    
@@ -428,3 +429,251 @@
 //  // 10.  Write a program to print multiples of 5 ranging 1 to 100. 
 // for ( i= 1; i <=20; i++)
 // document.write(i *5 + "<br>")
+
+
+//---------------practice work--------------//
+
+//-------------- 01 Banking & Finance--------//
+// function atmWithdrawal() {
+//     let availableAmount = 5000; 
+//     let withdrawalAmount = parseInt(prompt("Enter the amount you want to withdraw:"));
+
+//     if (withdrawalAmount % 100 !== 0) {
+//         alert("Error: Amount must be a multiple of 100.");
+//         return;
+//     }
+
+//     if (withdrawalAmount > availableAmount) {
+//         alert("Error: Insufficient funds in ATM.");
+//         return;
+//     }
+
+//     let bills1000 = Math.floor(withdrawalAmount / 1000);
+//     withdrawalAmount %= 1000;
+
+//     let bills500 = Math.floor(withdrawalAmount / 500);
+//     withdrawalAmount %= 500;
+
+//     let bills100 = Math.floor(withdrawalAmount / 100);
+
+//     alert(Dispensed:\n${bills1000} x 1000\n${bills500} x 500\n${bills100} x 100);
+// }
+// 2.
+// function parkingFeeCalculator() {
+//     let hoursParked = parseInt(prompt("Enter the number of hours parked:"));
+//     let fee = 0;
+
+//     if (hoursParked > 2) {
+//         fee = (hoursParked - 2) * 5;
+//         if (hoursParked > 10) {
+//             fee = 50; 
+//         }
+//     }
+
+//     alert(Total parking fee: $${fee});
+// }
+
+// 3.
+// function speedFineSystem() {
+//     let speed = parseInt(prompt("Enter the speed of the vehicle (km/h):"));
+//     let message;
+
+//     if (speed <= 60) {
+//         message = "Safe Speed";
+//     } else if (speed <= 80) {
+//         message = "Warning: Speed limit exceeded.";
+//     } else {
+//         let fine = (speed - 80) * 10;
+//         message = Fine: $${fine};
+//     }
+
+//     alert(message);
+// }
+
+
+// 4.
+// function loanInterestCalculator() {
+//     let loanAmount = parseFloat(prompt("Enter the loan amount:"));
+//     let interestRate;
+
+//     if (loanAmount <= 10000) {
+//         interestRate = 0.05;
+//     } else if (loanAmount <= 50000) {
+//         interestRate = 0.07;
+//     } else {
+//         interestRate = 0.10;
+//     }
+
+//     let totalAmount = loanAmount + (loanAmount * interestRate);
+//     alert(Total amount to be paid back: $${totalAmount.toFixed(2)});
+// }
+
+// 5.
+// function tollBoothSystem() {
+//     let vehicleType = prompt("Enter vehicle type (Car, Truck, Bus):");
+//     let toll;
+
+//     switch (vehicleType.toLowerCase()) {
+//         case "car":
+//             toll = 5;
+//             break;
+//         case "truck":
+//             toll = 10;
+//             break;
+//         case "bus":
+//             toll = 8;
+//             break;
+//         default:
+//             alert("Unknown vehicle type. Let it pass.");
+//             return;
+//     }
+
+//     let money = parseFloat(prompt("Enter the amount of money you have:"));
+//     if (money < toll) {
+//         alert("Insufficient funds. Let it pass but record unpaid toll.");
+//     } else {
+//         alert(toll collected: $${toll});
+//     }
+// }
+
+
+// 6.
+// function examResultProcessing() {
+//     let students = 3;
+//     let subjects = 4;
+//     let totalMarks = 0;
+
+//     for (let i = 0; i < students; i++) {
+//         let studentMarks = [];
+//         for (let j = 0; j < subjects; j++) {
+//             studentMarks.push(Math.floor(Math.random() * 101)); 
+//         }
+//         let average = studentMarks.reduce((a, b) => a + b) / subjects;
+//         let grade = average >= 50 ? "Pass" : "Fail";
+//         totalMarks += average;
+//         alert(Student ${i + 1}: Average = ${average.toFixed(2)}, Grade = ${grade});
+//     }
+
+//     alert(Class Average: ${(totalMarks / students).toFixed(2)});
+// }
+
+// 7.
+// function studentExamPassFail() {
+//     let students = 8;
+//     let passed = 0;
+//     let failed = 0;
+
+//     for (let i = 0; i < students; i++) {
+//         let score = Math.floor(Math.random() * 101); 
+//         if (score >= 50) {
+//             passed++;
+//         } else {
+//             failed++;
+//         }
+//     }
+
+//     alert(Students Passed: ${passed}, Students Failed: ${failed});
+// }
+
+
+// 8.
+// function cinemaTicketBooking() {
+//     let seats = 10;
+//     let totalRevenue = 0;
+
+//     for (let i = 0; i < seats; i++) {
+//         let age = parseInt(prompt("Enter age of the customer:"));
+//         let ticketPrice;
+
+//         if (age <= 12) {
+//             ticketPrice = 5;
+//         } else if (age <= 59) {
+//             ticketPrice = 10;
+//         } else {
+//             ticketPrice = 7;
+//         }
+
+//         totalRevenue += ticketPrice;
+//     }
+
+//     alert(Total revenue from ticket sales: $${totalRevenue});
+// }
+
+
+// 9.
+// function parkingLotFeeCalculation() {
+//     let cars = 15;
+//     let totalFee = 0;
+
+//     for (let i = 0; i < cars; i++) {
+//         let hours = Math.floor(Math.random() * 10) + 1; 
+//         let fee;
+
+//         if (hours <= 3) {
+//             fee = hours * 3;
+//         } else if (hours <= 6) {
+//             fee = 3 * 3 + (hours - 3) * 2;
+//         } else {
+//             fee = 3 * 3 + 3 * 2 + (hours - 6) * 1;
+//         }
+
+//         totalFee += fee;
+//     }
+
+//     alert(Total parking fees collected: $${totalFee});
+// }
+
+
+// 10.
+// function libraryLateFeeSystem() {
+//     let borrowers = 20; 
+//     let totalLateFees = 0; 
+
+//     for (let i = 0; i < borrowers; i++) {
+//         let daysLate = Math.floor(Math.random() * 15) + 1; 
+//         let lateFee;
+//         if (daysLate <= 5) {
+//             lateFee = daysLate * 2; 
+//         } else if (daysLate <= 10) {
+//             lateFee = (5 * 2) + ((daysLate - 5) * 3); 
+//         } else {
+//             lateFee = (5 * 2) + (5 * 3) + ((daysLate - 10) * 5); 
+//         }
+
+//         totalLateFees += lateFee; 
+//         console.log(Borrower ${i + 1}: Days Late = ${daysLate}, Late Fee = $${lateFee});
+//     }
+
+//     console.log(Total Late Fees Collected: $${totalLateFees});
+// }
+
+// libraryLateFeeSystem();
+
+
+// 11.
+// function gasStationFuelDispenser() {
+//     let totalRevenue = 0;
+//     const numberOfCars = 10;
+
+//     for (let i = 0; i < numberOfCars; i++) {
+//         let fuelRequested = Math.floor(Math.random() * 46) + 5; 
+//         let pricePerLiter;
+
+//         if (fuelRequested <= 20) {
+//             pricePerLiter = 1.2;
+//         } else if (fuelRequested <= 35) {
+//             pricePerLiter = 1.0;
+//         } else {
+//             pricePerLiter = 0.8;
+//         }
+
+//         let revenue = fuelRequested * pricePerLiter;
+//         totalRevenue += revenue;
+
+//         console.log(Car ${i + 1}: Requested Fuel = ${fuelRequested} liters, Price per Liter = $${pricePerLiter.toFixed(2)}, Revenue = $${revenue.toFixed(2)});
+//     }
+
+//     console.log(Total Revenue from all cars: $${totalRevenue.toFixed(2)});
+// }
+// gasStationFuelDispenser();
+
